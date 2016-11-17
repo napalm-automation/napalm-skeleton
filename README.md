@@ -4,8 +4,6 @@
 
 # napalm-skeleton
 
---- CUTTING_LINE: DELETE EVERYTHING STARTING FROM HERE BEFORE MERGING
-
 Congratulations! You are going to embark on an epic adventure that will bring you glory, fame and
 fortune.
 
