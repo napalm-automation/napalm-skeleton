@@ -26,3 +26,22 @@ from napalm_base.exceptions import ConnectionException, SessionLockedException, 
 
 class SkeletonDriver(NetworkDriver):
     """Napalm driver for Skeleton."""
+    def __init__(self, hostname, username, password, timeout=60, optional_args=None):
+        """Constructor."""
+        self.device = None
+        self.hostname = hostname
+        self.username = username
+        self.password = password
+        self.timeout = timeout
+
+        if optional_args is None:
+            optional_args = {}
+
+
+    def open(self):
+        """Implementation of NAPALM method open."""
+        pass
+
+    def close(self):
+        """Implementation of NAPALM method close."""
+        pass
