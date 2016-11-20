@@ -17,8 +17,7 @@
 import unittest
 
 from napalm_skeleton import skeleton
-from napalm_base.test.base import TestConfigNetworkDriver, TestGettersNetworkDriver
-import json
+from napalm_base.test.base import TestConfigNetworkDriver
 
 
 class TestConfigSkeletonDriver(unittest.TestCase, TestConfigNetworkDriver):
@@ -39,4 +38,3 @@ class TestConfigSkeletonDriver(unittest.TestCase, TestConfigNetworkDriver):
 
         cls.device.load_replace_candidate(filename='%s/initial.conf' % cls.vendor)
         cls.device.commit_config()
-
