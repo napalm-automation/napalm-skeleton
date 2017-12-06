@@ -18,14 +18,14 @@ Napalm driver for Skeleton.
 Read https://napalm.readthedocs.io for more information.
 """
 
-from napalm_base.base import NetworkDriver
-from napalm_base.exceptions import (
+from napalm.base import NetworkDriver
+from napalm.base.exceptions import (
     ConnectionException,
     SessionLockedException,
     MergeConfigException,
     ReplaceConfigException,
     CommandErrorException,
-    )
+)
 
 
 class SkeletonDriver(NetworkDriver):

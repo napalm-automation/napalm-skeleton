@@ -17,7 +17,7 @@
 import unittest
 
 from napalm_skeleton import skeleton
-from napalm_base.test.base import TestConfigNetworkDriver, TestGettersNetworkDriver
+from napalm.base.test.base import TestConfigNetworkDriver, TestGettersNetworkDriver
 import json
 
 
