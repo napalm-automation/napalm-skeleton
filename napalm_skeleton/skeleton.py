@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright 2016 Dravetech AB. All rights reserved.
 #
 # The contents of this file are licensed under the Apache License, Version 2.0
@@ -43,9 +44,10 @@ class SkeletonDriver(NetworkDriver):
             optional_args = {}
 
     def open(self):
-        """Implementation of NAPALM method open."""
+        """Implement the NAPALM method open (mandatory)"""
         pass
 
+
     def close(self):
-        """Implementation of NAPALM method close."""
+        """Implement the NAPALM method close (mandatory)"""
         pass
