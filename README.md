@@ -1,9 +1,3 @@
-[![PyPI](https://img.shields.io/pypi/v/napalm-skeleton.svg)](https://pypi.python.org/pypi/napalm-skeleton)
-[![PyPI](https://img.shields.io/pypi/dm/napalm-skeleton.svg)](https://pypi.python.org/pypi/napalm-skeleton)
-[![Build Status](https://travis-ci.org/napalm-automation/napalm-skeleton.svg?branch=master)](https://travis-ci.org/napalm-automation/napalm-skeleton)
-[![Coverage Status](https://coveralls.io/repos/github/napalm-automation/napalm-napalm-skeleton/badge.svg?branch=master)](https://coveralls.io/github/napalm-automation/napalm-napalm-skeleton)
-
-
 # napalm-skeleton
 
 Congratulations! You are going to embark on an epic adventure that will bring you glory, fame and
@@ -21,12 +15,10 @@ call it `SKELETON` so everytime you see `SKELETON` on this repo, replace it with
 picked.
 1. Let the `napalm` community know that you are planning to write a new driver. You can try reaching
 out on slack or on the mailing list. Someone will create a repo for you under the
-`napalam-automation` organization. You can host your own driver if you prefer but we think
-it's more interesting if we can host all of the drivers together. The only big difference between
-hosting the project ourselves and you hosting the driver yourself is that it will not be documented
-together with the rest of that drivers and it will not be officially supported by the rest of the
-`napalm` community. At least not officially. We are a bunch of friendly engineers that can't say no
-to a challenge so we might end up helping out anyway ;)
+[`napalm-automation-community`](https://github.com/napalm-automation-community) organization. You
+can host your own driver if you prefer but we think it's more interesting if we can host all of the
+drivers together.
+You can find more details regarding the [Community drivers guidelines](http://napalm.readthedocs.io/en/develop/contributing/drivers.html).
 1. Feel free to amend the Copyright holder.
 
 ### Replacing the skeleton to the new repo
@@ -87,10 +79,17 @@ limited so once they are stable we can forget about them.
 If there is a VM available, please, provide a vagrant environment and use it for the tests,
 that way other developers will be able to test as well.
 
+If you want Travis CI for your new driver (once hosted under the
+[`napalm-automation-community`](https://github.com/napalm-automation-community)
+organization), just let us know and we'll enable it for you.
+
 #### Testing getters
 
 This is easier, we can use a real machine or just mock the device. Write a test double for your
 device and provide the necessary mocked data.
+
+After you implement one or more methods, make sure the driver respects the base
+NAPALM API. To check this, simply execute ``tox`` on the command line.
 
 ### Other files
 
@@ -98,17 +97,3 @@ Some other stuff you have to do:
 
 * `setup.py` - Set yourself as the author and set the correct `name`.
 * `requirements.txt` - Make sure requirements are up to date.
-
-### Main NAPALM
-
-If you decided to go host the driver with `napalm-automation` there are a few more things you have
-to do:
-
-1. Add your driver to the tests in `napalm-base`:
-  * https://github.com/napalm-automation/napalm-base/blob/master/test/unit/TestGetNetworkDriver.py
-  * https://github.com/napalm-automation/napalm-base/blob/master/test/unit/requirements.txt
-1. Update the documentation in the `napalm` main repo:
-  1. https://github.com/napalm-automation/napalm/blob/master/docs/index.rst
-  1. https://github.com/napalm-automation/napalm/blob/master/docs/support/index.rst
-1. Enable your driver on the main installation:
-  * https://github.com/napalm-automation/napalm/blob/master/requirements.txt

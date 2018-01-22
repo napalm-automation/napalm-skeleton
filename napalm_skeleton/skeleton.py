@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright 2016 Dravetech AB. All rights reserved.
 #
 # The contents of this file are licensed under the Apache License, Version 2.0
@@ -18,14 +19,14 @@ Napalm driver for Skeleton.
 Read https://napalm.readthedocs.io for more information.
 """
 
-from napalm_base.base import NetworkDriver
-from napalm_base.exceptions import (
+from napalm.base import NetworkDriver
+from napalm.base.exceptions import (
     ConnectionException,
     SessionLockedException,
     MergeConfigException,
     ReplaceConfigException,
     CommandErrorException,
-    )
+)
 
 
 class SkeletonDriver(NetworkDriver):
@@ -43,9 +44,10 @@ class SkeletonDriver(NetworkDriver):
             optional_args = {}
 
     def open(self):
-        """Implementation of NAPALM method open."""
+        """Implement the NAPALM method open (mandatory)"""
         pass
 
+
     def close(self):
-        """Implementation of NAPALM method close."""
+        """Implement the NAPALM method close (mandatory)"""
         pass
