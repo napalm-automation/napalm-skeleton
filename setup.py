@@ -1,9 +1,9 @@
 """setup.py file."""
 
-import uuid
-
 from setuptools import setup, find_packages
-from pip.req import parse_requirements
+
+with open("requirements.txt", "r") as fs:
+    reqs = [r for r in fs.read().splitlines() if (len(r) > 0 and not r.startswith("#"))]
 
 __author__ = 'David Barroso <dbarrosop@dravetech.com>'
 
