@@ -23,7 +23,24 @@ You can find more details regarding the [Community drivers guidelines](http://na
 
 ### Replacing the skeleton to the new repo
 
-`[INSTRUCTIONS TO CLONE THIS REPO AND MOVE CONTENT TO NEW ONE HERE]`
+After cloning this repository, you can bootstrap a new repository for
+your driver using the following commands (keep `skeleton` as is, but
+replace `newname` and `NewName` appropriately):
+
+```sh
+git archive --prefix=napalm-newname/ HEAD | tar -C .. -xf -
+cd ../napalm-newname
+grep -rl skeleton | xargs sed -i"" s/skeleton/newname/g
+grep -rl Skeleton | xargs sed -i"" s/Skeleton/NewName/g
+for d in $(find . -type d -name '*skeleton*'); do mv $d ${d/skeleton/newname}; done
+for f in $(find . -type f -name '*skeleton*'); do mv $f ${f/skeleton/newname}; done
+for f in $(find . -type f -name '*Skeleton*'); do mv $f ${f/Skeleton/NewName}; done
+git init
+git add .
+```
+
+Alternatively, you can replace the first two commands by using the
+*Use this template* button in GitHub interface.
 
 ### Fixing the `README.md` and `AUTHORS`
 
